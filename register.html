@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Clothes-Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Oswald:wght@400;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="login">
+    <div class="containerRegister">
+        <h1 class="logo-index">LUXURY CLOTHES</h1>
+        <h2>Registro</h2>
+        <form id="registrationForm">
+            <label for="firstName">Nombre:</label>
+            <input type="text" id="firstName" required>
+            
+            <label for="lastName">Apellido:</label>
+            <input type="text" id="lastName" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required>
+            
+            <label for="dob">Fecha de Nacimiento:</label>
+            <input type="date" id="dob" required>
+
+            <button class="buttonRegister" type="button" onclick="register()">Registrarse</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

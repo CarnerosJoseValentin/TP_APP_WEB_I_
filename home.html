@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Clothes - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Oswald:wght@400;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        
+        <div class="menu container">
+            <a href="home.html" class="logo">LUXURY CLOTHES</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="img/iconos/menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="calzado.html">Calzado</a></li>
+                    <li><a href="camisas.html">Camisas</a></li>
+                    <li><a href="sacos.html">Sacos</a></li>
+                </ul>
+            </nav>
+
+            <div>
+                <ul>
+                    <li class="submenu">
+                        <img src="img/iconos/car.svg" id="img-carrito" alt="carrito">
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Cantidad</th>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <a href="#" id="vaciar-carrito" class="btn-2" >Vaciar carrito</a>
+                            <a href="#" id="btnComprar" class="btn-2">Comprar</a>
+                        </div>
+                    </li>
+                    <a href="index.html" class="logout"><img src="img/iconos/log_out.png" alt="Salir"></a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header-content container">
+            <div class="header-img">
+                <img src="img/home/modelo.png" alt="">
+            </div>
+            <div class="header-txt">
+                <h1>SALE OFF</h1>
+                <p>Las mejores prendas para vos</p>
+                <a href="#lista-1" class="btn-1" >VER</a>
+            </div>
+        </div>
+
+    </header>
+
+
+    <div id="modal_container" class="modal-container">
+        <div class="modal">
+            <h1>DATOS DE LA COMPRA</h1>
+            <form id="formularioCompra">
+                <label for="direccion">Dirección de envío:</label>
+                <input type="text" id="direccion" required>
+                <br>
+    
+                <label for="codigoPostal">Código Postal:</label>
+                <input type="number" id="codigoPostal" required>
+                <br>
+    
+                <label for="localidad">Localidad:</label>
+                <input type="text" id="localidad" required>
+                <br>
+    
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" required>
+                <br>
+
+                <label for="precio">Importe Total:</label>
+                <label for="total" id="totalLabel"></label>
+                <br>
+
+            </form>
+            <button class="btn-deliver" id="btndeliver">Confirmar compra</button>
+            <button class="btncancelar" id="close">Cacelar</button>
+        </div>
+    </div>
+
+
+    <section class="ofert container">
+        <div class="ofert-1">
+            <div class="ofert-img">
+                <img src="img/accesos/s1.png" alt="">
+            </div>
+            <div class="ofert-txt">
+                <h3>Calzado</h3>
+                <a href="calzado.html" class="btn-2">Ver</a>
+            </div>
+        </div>
+
+        <div class="ofert-1">
+            <div class="ofert-img">
+                <img src="img/accesos/c1.png" alt="">
+            </div>
+            <div class="ofert-txt">
+                <h3>Camisas</h3>
+                <a href="camisas.html" class="btn-2">Ver</a>
+            </div>
+        </div>
+
+        <div class="ofert-1">
+            <div class="ofert-img">
+                <img src="img/accesos/j1.png" alt="">
+            </div>
+            <div class="ofert-txt">
+                <h3>Sacos</h3>
+                <a href="sacos.html" class="btn-2">Ver</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="products container" id="lista-1">
+
+        <h2>OFERTAS</h2>
+
+        <div class="product-content">
+            <div class="product">
+                <img src="img/ofertas/oferta1.png" alt="">
+                <div class="product-txt">
+                    <h3>Dior</h3>
+                    <p>Single-breasted Wool Dinner Jacket - Black.</p>
+                    <p class="precio">$180</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/ofertas/oferta2.png" alt="">
+                <div class="product-txt">
+                    <h3>BOSS by HUGO BOSS</h3>
+                    <p>Slim Fit Dress Shift - Blue.</p>
+                    <p class="precio">$300</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/ofertas/oferta3.png" alt="">
+                <div class="product-txt">
+                    <h3>Burberry</h3>
+                    <p>Italian Velvet Overshirt - Black</p>
+                    <p class="precio">$900</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/ofertas/oferta4.png" alt="">
+                <div class="product-txt">
+                    <h3>Gucci</h3>
+                    <p>Classic Bedale Wax Jacket - Black.</p>
+                    <p class="precio">$1000</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/ofertas/oferta5.png" alt="">
+                <div class="product-txt">
+                    <h3>Ferragamo</h3>
+                    <p>Riley Leather Oxford - Black.</p>
+                    <p class="precio">$760</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/ofertas/oferta6.png" alt="">
+                <div class="product-txt">
+                    <h3>Jeffery West</h3>
+                    <p>Derby Leather Shoes.</p>
+                    <p class="precio">$199</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/ofertas/oferta7.png" alt="">
+                <div class="product-txt">
+                    <h3>Hermes</h3>
+                    <p>Belt Derby Leather.</p>
+                    <p class="precio">$89</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="27">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/ofertas/oferta8.png" alt="">
+                <div class="product-txt">
+                    <h3>Emporio Armani</h3>
+                    <p>Wallet Leather.</p>
+                    <p class="precio">$99</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="26">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/ofertas/oferta9.png" alt="">
+                <div class="product-txt">
+                    <h3>Tom Ford</h3>
+                    <p>Black Leather Belt.</p>
+                    <p class="precio">$89</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="27">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <section class="icons container">
+        
+        <div class="icon-1">
+            <div class="icon-txt">
+                <h3>Cambiá tu estilo, cambiá tu vida.</h3>
+            </div>
+        </div>
+
+        <div class="icon-1">
+            <div class="icon-txt">
+                <h3>Estilo es usar lo que te hace sentir bien.</h3>
+            </div>
+        </div>
+
+        <div class="icon-1">
+            <div class="icon-txt">
+                <h3>Un nuevo concepto en moda y estilo.</h3>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="blog container">
+
+        <div class="blog-1">
+            <img src="img/home/b1.webp" alt="">
+            <h3>ESTILO</h3>
+            <p>Ya sea que busques estilos informales o formales, la edición de camisas de Luxury Clothes llevará tu sastrería en una nueva dirección. Elija entre siluetas ajustadas, regulares y extragrandes en una variedad de colores y patrones. Opte por camisas de mezclilla más relajadas y diseños de manga corta para el fin de semana, y cambie a una camisa de esmoquin con corte preciso para completar un conjunto de noche seguro. Encuentre su nuevo favorito de Ralph Lauren, Ben Sherman, Thom Browne y Hugo Boss.</p>
+        </div>
+
+        <div class="blog-1">
+            <img src="img/home/b2.webp" alt="">
+            <h3>DISTINCION</h3>
+            <p>Los instantes sencillos y emocionantes son los grandes protagonistas de la campaña de la Firma para las fiestas concebida por el Director Creativo Sabato De Sarno. Desde abrazos cálidos hasta sonrisas sinceras, se muestran momentos inolvidables para destacar el espíritu de unión de las fiestas..</p>
+        </div>
+
+        <div class="blog-1">
+            <img src="img/home/b3.webp" alt="">
+            <h3>CALIDAD</h3>
+            <p>Nuestros inconfundibles trajes nos han permitido labrarnos nuestra reputación actual. Descubra nuestro excepcional legado de sastrería, con trajes para todas las ocasiones impecablemente elaborados con las mejores telas.</p>
+        </div>
+
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>LUXURY CLOTHES</h3>
+                <ul>
+                    <P>Copyright © 1990-2023 LUXURY CLOTHES CO.</P>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

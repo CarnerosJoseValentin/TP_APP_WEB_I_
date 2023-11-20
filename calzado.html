@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Clothes - Calzados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Oswald:wght@400;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        
+        <div class="menu container">
+            <a href="home.html" class="logo">LUXURY CLOTHES</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="img/iconos/menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="calzado.html">Calzado</a></li>
+                    <li><a href="camisas.html">Camisas</a></li>
+                    <li><a href="sacos.html">Sacos</a></li>
+                </ul>
+            </nav>
+
+            <div>
+                <ul>
+                    <li class="submenu">
+                        <img src="img/iconos/car.svg" id="img-carrito" alt="carrito">
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Cantidad</th>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <a href="#" id="vaciar-carrito" class="btn-2" >Vaciar carrito</a>
+                            <a href="#" id="btnComprar" class="btn-2" onclick="abrirFormulario()">Comprar</a>
+                        </div>
+                    </li>
+                    <a href="index.html" class="logout"><img src="img/iconos/log_out.png" alt="Salir"></a>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="header-content container">
+            <div class="header-img">
+                <img src="img/home/modelo3.png" alt="">
+            </div>
+            <div class="header-txt">
+                <h1>CALZADOS</h1>
+            </div>
+        </div>
+
+    </header>
+
+    <div id="modal_container" class="modal-container">
+        <div class="modal">
+            <h1>DATOS DE LA COMPRA</h1>
+            <form id="formularioCompra">
+                <label for="direccion">Dirección de envío:</label>
+                <input type="text" id="direccion" required>
+                <br>
+    
+                <label for="codigoPostal">Código Postal:</label>
+                <input type="number" id="codigoPostal" required>
+                <br>
+    
+                <label for="localidad">Localidad:</label>
+                <input type="text" id="localidad" required>
+                <br>
+    
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" required>
+                <br>
+
+                <label for="precio">Importe Total:</label>
+                <label for="total" id="totalLabel"></label>
+                <br>
+
+            </form>
+            <button class="btn-deliver" id="btndeliver">Confirmar compra</button>
+            <button class="btncancelar" id="close">Cacelar</button>
+        </div>
+    </div>
+
+    <main class="products container" id="lista-1">
+
+        <div class="product-content">
+            <div class="product">
+                <img src="img/zapatos/zapato1.png" alt="">
+                <div class="product-txt">
+                    <h3>Antonio Maurizi</h3>
+                    <p>Cap Toe Double Monk Leather Oxford - Brown.</p>
+                    <p class="precio">$700</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="7">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/zapatos/zapato2.png" alt="">
+                <div class="product-txt">
+                    <h3>Karl Legerfeld</h3>
+                    <p>Double Monk Leather Oxford-Black.</p>
+                    <p class="precio">$299</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="8">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/zapatos/zapato3.png" alt="">
+                <div class="product-txt">
+                    <h3>Cole Hann</h3>
+                    <p>Hawthorne Plain Leather Oxford</p>
+                    <p class="precio">$427</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="9">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/zapatos/zapato4.png" alt="">
+                <div class="product-txt">
+                    <h3>Tod's</h3>
+                    <p>Leather Derby.</p>
+                    <p class="precio">$535</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="10">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/zapatos/zapato5.png" alt="">
+                <div class="product-txt">
+                    <h3>Common Projects</h3>
+                    <p>Leather Derby Shoes.</p>
+                    <p class="precio">$176</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="11">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/zapatos/zapato6.png" alt="">
+                <div class="product-txt">
+                    <h3>Mezlan</h3>
+                    <p>Croc-embossed Leather Oxford.</p>
+                    <p class="precio">$79</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="12">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>LUXURY CLOTHES</h3>
+                <ul>
+                    <P>Copyright © 1990-2023 LUXURY CLOTHES CO.</P>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

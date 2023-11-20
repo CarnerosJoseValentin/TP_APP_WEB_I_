@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Clothes - Sacos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Oswald:wght@400;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        
+        <div class="menu container">
+            <a href="home.html" class="logo">LUXURY CLOTHES</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="img/iconos/menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="calzado.html">Calzado</a></li>
+                    <li><a href="camisas.html">Camisas</a></li>
+                    <li><a href="sacos.html">Sacos</a></li>
+                </ul>
+            </nav>
+
+            <div>
+                <ul>
+                    <li class="submenu">
+                        <img src="img/iconos/car.svg" id="img-carrito" alt="carrito">
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Cantidad</th>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <a href="#" id="vaciar-carrito" class="btn-2" >Vaciar carrito</a>
+                            <a href="#" id="btnComprar" class="btn-2" onclick="abrirFormulario()">Comprar</a>
+                        </div>
+                    </li>
+                    <a href="index.html" class="logout"><img src="img/iconos/log_out.png" alt="Salir"></a>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="header-content container">
+            <div class="header-img">
+                <img src="img/home/modelo4.png" alt="">
+            </div>
+            <div class="header-txt">
+                <h1>SACOS</h1>
+            </div>
+        </div>
+
+    </header>
+
+    <div id="modal_container" class="modal-container">
+        <div class="modal">
+            <h1>DATOS DE LA COMPRA</h1>
+            <form id="formularioCompra">
+                <label for="direccion">Dirección de envío:</label>
+                <input type="text" id="direccion" required>
+                <br>
+    
+                <label for="codigoPostal">Código Postal:</label>
+                <input type="number" id="codigoPostal" required>
+                <br>
+    
+                <label for="localidad">Localidad:</label>
+                <input type="text" id="localidad" required>
+                <br>
+    
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" required>
+                <br>
+
+                <label for="precio">Importe Total:</label>
+                <label for="total" id="totalLabel"></label>
+                <br>
+                
+            </form>
+            <button class="btn-deliver" id="btndeliver">Confirmar compra</button>
+            <button class="btncancelar" id="close">Cacelar</button>
+        </div>
+    </div>
+
+    <main class="products container" id="lista-1">
+
+        <div class="product-content">
+            <div class="product">
+                <img src="img/sacos/sacos1.png" alt="">
+                <div class="product-txt">
+                    <h3>Brunello Cucinelli</h3>
+                    <p>Corduroy Blazer.</p>
+                    <p class="precio">$220</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="19">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/sacos/sacos2.png" alt="">
+                <div class="product-txt">
+                    <h3>Herno</h3>
+                    <p>Blazer Coat.</p>
+                    <p class="precio">$500</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="20">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/sacos/sacos3.png" alt="">
+                <div class="product-txt">
+                    <h3>The Kooples</h3>
+                    <p>Wool Blazer.</p>
+                    <p class="precio">$189</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="21">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/sacos/sacos4.png" alt="">
+                <div class="product-txt">
+                    <h3>Rag & Bone</h3>
+                    <p>Parker Thornproof Wool Blazer.</p>
+                    <p class="precio">$350</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="22">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/sacos/sacos5.png" alt="">
+                <div class="product-txt">
+                    <h3>Brooks Brothers</h3>
+                    <p>Regent Fit Explorer Wool-blend Suit Jacket</p>
+                    <p class="precio">$65</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="23">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/sacos/sacos6.png" alt="">
+                <div class="product-txt">
+                    <h3>KENZO</h3>
+                    <p>Shawl-lapel Double-breasted Tailored Blazer.</p>
+                    <p class="precio">$420</p>
+                    <div class="cantidad-container">
+                        <button class="btn-cantidad" onclick="restarCantidad(this)">-</button>
+                        <span class="cantidad" id="cantidad">1</span>
+                        <button class="btn-cantidad" onclick="sumarCantidad(this)">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-2" data-id="24">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>LUXURY CLOTHES</h3>
+                <ul>
+                    <P>Copyright © 1990-2023 LUXURY CLOTHES CO.</P>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
